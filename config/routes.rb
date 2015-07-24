@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   
 
+  resources :roles
+  resources :relationship_types
+  resources :relationships
+  resources :families
+  resources :people
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
