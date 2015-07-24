@@ -1,0 +1,53 @@
+<%= form_for(@relationship) do |f| %>
+  <% if @relationship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@relationship.errors.count, "error") %> prohibited this relationship from being saved:</h2>
+
+      <ul>
+      <% @relationship.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :family_id %><br>
+    <%= f.text_field :family_id %>
+  </div>
+  <div class="field">
+    <%= f.label :person_1_id %><br>
+    <%= f.number_field :person_1_id %>
+  </div>
+  <div class="field">
+    <%= f.label :person_2_id %><br>
+    <%= f.number_field :person_2_id %>
+  </div>
+  <div class="field">
+    <%= f.label :relationship_type_id %><br>
+    <%= f.text_field :relationship_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :role_1_id %><br>
+    <%= f.number_field :role_1_id %>
+  </div>
+  <div class="field">
+    <%= f.label :role_2_id %><br>
+    <%= f.number_field :role_2_id %>
+  </div>
+  <div class="field">
+    <%= f.label :date_started %><br>
+    <%= f.date_select :date_started %>
+  </div>
+  <div class="field">
+    <%= f.label :date_ended %><br>
+    <%= f.date_select :date_ended %>
+  </div>
+  <div class="field">
+    <%= f.label :other_details %><br>
+    <%= f.text_field :other_details %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

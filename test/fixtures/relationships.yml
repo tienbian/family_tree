@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  family_id: 
+  person_1_id: 1
+  person_2_id: 1
+  relationship_type_id: 
+  role_1_id: 1
+  role_2_id: 1
+  date_started: 2015-07-24
+  date_ended: 2015-07-24
+  other_details: MyString
+
+two:
+  family_id: 
+  person_1_id: 1
+  person_2_id: 1
+  relationship_type_id: 
+  role_1_id: 1
+  role_2_id: 1
+  date_started: 2015-07-24
+  date_ended: 2015-07-24
+  other_details: MyString

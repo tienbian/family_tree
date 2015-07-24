@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Family:</strong>
+  <%= @relationship.family %>
+</p>
+
+<p>
+  <strong>Person 1:</strong>
+  <%= @relationship.person_1_id %>
+</p>
+
+<p>
+  <strong>Person 2:</strong>
+  <%= @relationship.person_2_id %>
+</p>
+
+<p>
+  <strong>Relationship type:</strong>
+  <%= @relationship.relationship_type %>
+</p>
+
+<p>
+  <strong>Role 1:</strong>
+  <%= @relationship.role_1_id %>
+</p>
+
+<p>
+  <strong>Role 2:</strong>
+  <%= @relationship.role_2_id %>
+</p>
+
+<p>
+  <strong>Date started:</strong>
+  <%= @relationship.date_started %>
+</p>
+
+<p>
+  <strong>Date ended:</strong>
+  <%= @relationship.date_ended %>
+</p>
+
+<p>
+  <strong>Other details:</strong>
+  <%= @relationship.other_details %>
+</p>
+
+<%= link_to 'Edit', edit_relationship_path(@relationship) %> |
+<%= link_to 'Back', relationships_path %>

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   
 
+  resources :relationships
+  resources :families
+  resources :people
+  resources :relationship_types
+  resources :roles
   resources :roles
   resources :relationship_types
   resources :relationships

@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724024228) do
+ActiveRecord::Schema.define(version: 20150724032412) do
 
   create_table "families", force: :cascade do |t|
+    t.integer  "person_id",     limit: 4
     t.string   "name",          limit: 255
     t.string   "description",   limit: 255
     t.date     "date_from"
     t.date     "date_to"
     t.string   "other_details", limit: 255
-    t.integer  "person_id",     limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
@@ -27,18 +27,18 @@ ActiveRecord::Schema.define(version: 20150724024228) do
   add_index "families", ["person_id"], name: "index_families_on_person_id", using: :btree
 
   create_table "genders", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "description", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "people", force: :cascade do |t|
     t.string   "first_name",     limit: 255
     t.string   "last_name",      limit: 255
+    t.integer  "gender_id",      limit: 4
     t.date     "date_of_birth"
     t.string   "place_of_birth", limit: 255
     t.string   "other_details",  limit: 255
-    t.integer  "gender_id",      limit: 4
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
@@ -92,16 +92,13 @@ ActiveRecord::Schema.define(version: 20150724024228) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
-    t.integer  "person_id",              limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["person_id"], name: "index_users_on_person_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "families", "people"
   add_foreign_key "people", "genders"
   add_foreign_key "relationships", "families"
   add_foreign_key "relationships", "relationship_types"
-  add_foreign_key "users", "people"
 end
